@@ -5,7 +5,8 @@ The idea behind this application is to make the transfer between an idea and an 
 
 ..........................
 
-Die Idee hinter dieser Anwendung ist es, den Transfer zwischen einer Idee und einer App einfach und schnell zu gestalten. Ein vielseitiges und flexibles Design mit leicht beiarbeitbare und veränderbaren Elementen, die diese Anwendung fast grenzenlos machen und leicht für jede E-Commerce-Produkt-App geeignet sind.
+Die Idee hinter dieser Anwendung ist es, den Transfer zwischen einer Idee und einer App einfach und schnell zu gestalten. Ein vielseitiges und flexibles Design mit leicht beiarbeitbare und veränderbaren Elementen, die diese Anwendung fast grenzenlos machen und leicht für viele 
+E-Commerce-Produkt-App geeignet sind.
 
 ## Getting Started
 
