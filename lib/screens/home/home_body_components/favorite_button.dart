@@ -2,7 +2,7 @@ import 'package:app_vorlage_prototyp/config/palettes/color_palette.dart';
 import 'package:flutter/material.dart';
 
 class XFavoriteButton extends StatefulWidget {
-  XFavoriteButton({
+  const XFavoriteButton({
     double? iconSize,
     Color? iconColor,
     Color? iconDisabledColor,
@@ -137,7 +137,7 @@ class _XFavoriteButtonState extends State<XFavoriteButton>
               Icon(
                 (Icons.favorite_border),
                 size: _sizeAnimation.value,
-                color: black,
+                color: cBlack,
               ),
             ],
           ),

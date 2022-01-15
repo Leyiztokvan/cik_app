@@ -1,5 +1,6 @@
+import 'package:app_vorlage_prototyp/components/bottom_navigation_bar.dart';
 import 'package:app_vorlage_prototyp/components/search_bar/custom_search_bar.dart';
-import 'package:app_vorlage_prototyp/config/modules/border_variables_module.dart';
+import 'package:app_vorlage_prototyp/config/modules/border_padding_margin_radius_etc_variables_module.dart';
 import 'package:app_vorlage_prototyp/config/palettes/color_palette.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,7 @@ class XHomepageAppBar extends StatelessWidget {
     required this.subTitleStyle,
     required this.imageData,
     required this.onPressed,
+    this.xNavigationBar,
   })  : floating = floating,
         pinned = pinned,
         snap = snap,
@@ -30,6 +32,7 @@ class XHomepageAppBar extends StatelessWidget {
   final String title;
   final titleStyle;
   final subTitleStyle;
+  final XNavigationBar? xNavigationBar;
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +55,7 @@ class XHomepageAppBar extends StatelessWidget {
         elevation: ePrimary,
         title: Card(
           elevation: 1,
-          shadowColor: black,
+          shadowColor: cBlack,
           margin: EdgeInsets.only(top: mPrimaryMarginTB),
           child: Container(
             alignment: Alignment.topCenter,
@@ -96,7 +99,7 @@ class XHomepageAppBar extends StatelessWidget {
                       ),
                       child: IconButton(
                         onPressed: onPressed,
-                        icon: Icon(Icons.tune),
+                        icon: const Icon(Icons.tune),
                         color: Theme.of(context).colorScheme.primary,
                       )),
                 ),
@@ -139,7 +142,7 @@ class XHomepageAppBar extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Spacer(
+                          const Spacer(
                             flex: 1,
                           ),
                           GestureDetector(

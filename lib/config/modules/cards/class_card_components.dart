@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const double icon1Size = 28;
+// const double icon2Size = icon1Size;
 const double icon3Size = 40;
 const double icon4Size = 40;
 

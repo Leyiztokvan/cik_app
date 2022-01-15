@@ -1,4 +1,4 @@
-import 'package:app_vorlage_prototyp/config/modules/border_variables_module.dart';
+import 'package:app_vorlage_prototyp/config/modules/border_padding_margin_radius_etc_variables_module.dart';
 import 'package:app_vorlage_prototyp/config/palettes/color_palette.dart';
 import 'package:flutter/material.dart';
 
@@ -24,8 +24,9 @@ class XSearchBar extends StatelessWidget {
           decoration: InputDecoration(
             border: InputBorder.none,
             hintText: 'Search',
-            hintStyle: Theme.of(context).inputDecorationTheme.hintStyle,
-            prefixIcon: Icon(
+            hintStyle: Theme.of(context).textTheme.overline,
+            // Theme.of(context).inputDecorationTheme.hintStyle,
+            prefixIcon: const Icon(
               Icons.search,
             ),
             suffixIcon: IconButton(
@@ -35,8 +36,8 @@ class XSearchBar extends StatelessWidget {
               ),
               onPressed: _controller.clear,
             ),
-            suffixIconConstraints: BoxConstraints(minWidth: 28),
-            prefixIconConstraints: BoxConstraints(minWidth: 36),
+            suffixIconConstraints: const BoxConstraints(minWidth: 28),
+            prefixIconConstraints: const BoxConstraints(minWidth: 36),
           ),
         ),
       ),

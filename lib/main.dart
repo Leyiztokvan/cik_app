@@ -1,7 +1,11 @@
-import 'package:app_vorlage_prototyp/navigation.dart';
+import 'package:app_vorlage_prototyp/components/bottom_navigation_bar.dart';
+import 'package:app_vorlage_prototyp/screens/discover/discover_screen.dart';
 import 'package:app_vorlage_prototyp/screens/main_screen/main_screen.dart';
+import 'package:app_vorlage_prototyp/screens/profile/profile_screen.dart';
+import 'package:app_vorlage_prototyp/screens/settings/settings_screen.dart';
+import 'package:app_vorlage_prototyp/screens/splash/splash_screen.dart';
+import 'package:app_vorlage_prototyp/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
-// import 'TESTs/testing_screen.dart';
 import 'config/themes/theme.dart';
 import 'screens/authentication/authentication_screen.dart';
 import 'screens/home/home_screen.dart';
@@ -18,24 +22,21 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final bool _isDark = true;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // initialRoute: '/testing',
-      initialRoute: '/nav',
+      initialRoute: '/authentication',
       routes: {
-        '/main': (context) => MainScreen(),
-        '/nav': (context) => XNavigationBar(),
-        // '/testing': (context) => TestHomeBody(),
-        // '/': (context) => LoadingScreen(),
-        // '/welcome': (context) => WelcomeScreen(),
-        '/home': (context) => HomepageScreen(),
-        '/authentfication': (context) => const AuthenticationScreen(),
-        // '/profile': (context) => ProfileScreen(),
-        // '/settings': (context) => SettingsScreen(),
-        // '/discover': (context) => DiscoverScreen(),
+        '/main': (context) => const MainScreen(),
+        '/splash': (context) => const SplashScreen(),
+        '/welcome': (context) => const WelcomeScreen(),
+        '/authentication': (context) => const AuthenticationScreen(),
+        '/nav': (context) => const XNavigationBar(),
+        '/discover': (context) => const DiscoverScreen(),
+        '/home': (context) => const HomepageScreen(),
+        '/profile': (context) => const ProfileScreen(),
+        '/settings': (context) => const SettingsScreen(),
       },
       themeMode: ThemeMode.system,
       theme: lightTheme,

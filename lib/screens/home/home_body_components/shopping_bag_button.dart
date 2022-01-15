@@ -3,22 +3,23 @@ import 'package:flutter/material.dart';
 
 class XShoppingBagButton extends StatefulWidget {
   // TODO: USE ICON_DATA_THEME
-  XShoppingBagButton({
+  const XShoppingBagButton({
     double? iconSize,
-    Color? iconColor,
     Color? iconDisabledColor,
     bool? isFavorite,
+    required Color iconColor,
     required Function valueChanged,
     Key? key,
+    required this.xiconColor,
   })  : _iconSize = iconSize ?? 22.0,
-        _iconColor = iconColor ?? cPrimaryColor,
+        // _iconColor = iconColor ?? cPrimaryColor,
         _iconDisabledColor = iconDisabledColor ?? Colors.white,
         _isFavorite = isFavorite ?? false,
         _valueChanged = valueChanged,
         super(key: key);
 
   final double _iconSize;
-  final Color _iconColor;
+  final Color xiconColor;
   final bool _isFavorite;
   final Function _valueChanged;
   final Color? _iconDisabledColor;
@@ -63,13 +64,13 @@ class _XShoppingBagButtonState extends State<XShoppingBagButton>
 
     _curve = CurvedAnimation(curve: Curves.slowMiddle, parent: _controller);
     Animation<Color?> _selectedColorAnimation = ColorTween(
-      begin: widget._iconColor,
+      begin: widget.xiconColor,
       end: widget._iconDisabledColor,
     ).animate(_curve);
 
     Animation<Color?> _deSelectedColorAnimation = ColorTween(
       begin: widget._iconDisabledColor,
-      end: widget._iconColor,
+      end: widget.xiconColor,
     ).animate(_curve);
 
     _colorAnimation = (_isFavorite == true)
@@ -138,7 +139,7 @@ class _XShoppingBagButtonState extends State<XShoppingBagButton>
               Icon(
                 (Icons.shopping_bag_outlined),
                 size: _sizeAnimation.value,
-                color: black,
+                color: cBlack,
               ),
             ],
           ),

@@ -12,6 +12,6 @@ class HomepageScreen extends StatefulWidget {
 class _HomepageScreenState extends State<HomepageScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(body: BodyHomepage()));
+    return const SafeArea(child: Scaffold(body: BodyHomepage()));
   }
 }

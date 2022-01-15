@@ -34,77 +34,69 @@ class _XCustomStepperState extends State<XCustomStepper> {
   // final Color _xstepperColor = Theme.of(context).colorScheme.onPrimary;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      constraints: BoxConstraints.tightFor(
-          width: widget.iconSize * 4.4, height: widget.iconSize * 1.1),
-      decoration: BoxDecoration(
-        //backgroundBlendMode: BlendMode.lighten,
-        color: widget.stepperColor,
-        borderRadius: rPrimaryButtonRadius,
-        boxShadow: [
-          BoxShadow(
-            //TODO: CREATE CUSTOM SHADAOW COLOR FOR LIGHT AND DARK TEHEME IN  COOR SHEME
-            color: black,
-            // Theme.of(context).colorScheme.shadow,
-            // blurRadius: 0.5,
-            // spreadRadius: 0.0,
-            offset: Offset(0.0, 0.2), // shadow direction: bottom right
-          )
-        ],
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Flexible(
-            flex: 1,
-            // fit: FlexFit.tight,
-            child: Container(
-              alignment: Alignment.centerLeft,
-              child: XRoundedIconButton(
-                icon: Icons.remove,
-                iconSize: widget.iconSize,
-                onPress: () {
-                  setState(() {
-                    widget.value = widget.value == widget.lowerLimit
-                        ? widget.lowerLimit
-                        : widget.value -= widget.stepValue;
-                  });
-                },
+    return Card(
+      child: Container(
+        constraints: BoxConstraints.tightFor(
+            width: widget.iconSize * 4.4, height: widget.iconSize * 1.3),
+        decoration: BoxDecoration(
+          //backgroundBlendMode: BlendMode.lighten,
+          color: widget.stepperColor,
+          borderRadius: rPrimaryButtonRadius,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Flexible(
+              flex: 1,
+              // fit: FlexFit.tight,
+              child: Container(
+                alignment: Alignment.centerLeft,
+                child: XRoundedIconButton(
+                  icon: Icons.remove,
+                  iconSize: widget.iconSize,
+                  onPress: () {
+                    setState(() {
+                      widget.value = widget.value == widget.lowerLimit
+                          ? widget.lowerLimit
+                          : widget.value -= widget.stepValue;
+                    });
+                  },
+                ),
               ),
             ),
-          ),
-          Flexible(
-            flex: 2,
-            // fit: FlexFit.tight,
-            child: Container(
-              alignment: Alignment.center,
-              color: transparent,
-              width: widget.iconSize * 2,
-              child: Text(
-                '${widget.value}',
-                style: Theme.of(context).textTheme.button,
+            Flexible(
+              flex: 2,
+              // fit: FlexFit.tight,
+              child: Container(
+                alignment: Alignment.center,
+                color: transparent,
+                width: widget.iconSize * 2,
+                child: Text(
+                  '${widget.value}',
+                  style: Theme.of(context).textTheme.button,
+                ),
               ),
             ),
-          ),
-          Flexible(
-            flex: 1,
-            child: Container(
-              alignment: Alignment.centerRight,
-              child: XRoundedIconButton(
-                icon: Icons.add,
-                iconSize: widget.iconSize,
-                onPress: () {
-                  setState(() {
-                    widget.value = widget.value == widget.upperLimit
-                        ? widget.upperLimit
-                        : widget.value += widget.stepValue;
-                  });
-                },
+            Flexible(
+              flex: 1,
+              child: Container(
+                alignment: Alignment.centerRight,
+                child: XRoundedIconButton(
+                  icon: Icons.add,
+                  iconSize: widget.iconSize,
+                  onPress: () {
+                    setState(() {
+                      widget.value = widget.value == widget.upperLimit
+                          ? widget.upperLimit
+                          : widget.value += widget.stepValue;
+                    });
+                  },
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

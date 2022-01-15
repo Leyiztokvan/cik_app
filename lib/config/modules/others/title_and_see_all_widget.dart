@@ -1,4 +1,4 @@
-import 'package:app_vorlage_prototyp/config/modules/border_variables_module.dart';
+import 'package:app_vorlage_prototyp/config/modules/border_padding_margin_radius_etc_variables_module.dart';
 import 'package:app_vorlage_prototyp/config/palettes/color_palette.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,7 @@ class XTitleAndSeeAllWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-        left: pSecondaryPaddingLR,
+        left: pPrimaryPaddingLR,
         top: mPrimaryMarginTB,
         right: pSecondaryPaddingLR,
       ),

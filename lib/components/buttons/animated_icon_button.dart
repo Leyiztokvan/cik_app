@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class XAnimatedIconButton extends StatefulWidget {
-  XAnimatedIconButton({
+  const XAnimatedIconButton({
     double? iconSize,
     Color? iconColor,
     Color? iconDisabledColor,

@@ -1,4 +1,4 @@
-import 'package:app_vorlage_prototyp/config/modules/border_variables_module.dart';
+import 'package:app_vorlage_prototyp/config/modules/border_padding_margin_radius_etc_variables_module.dart';
 import 'package:app_vorlage_prototyp/config/modules/cards/class_card_components.dart';
 import 'package:app_vorlage_prototyp/config/modules/lists/card_lists.dart';
 import 'package:flutter/material.dart';
@@ -28,33 +28,15 @@ class _XTabSectionscreenListState extends State<XTabSectionscreenList> {
     });
   }
 
-  // Widget _buildScreens(XCardComponents cComponents) {
-  //   return XCardTemplate(
-  //     cComponents: cComponents,
-  //   );
-  // }
-
   Widget _buildTabScreens(XCardComponents cComponents) {
-    return XTabTitle(
+    return XHomepageTabTitle(
       cComponents: cComponents,
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    // ignore: avoid_print
-    // print(' xtabTitles ${xtabTitles.length}');
-    // ignore: avoid_print
-    // print('xcardScreenComponents ${xcardScreenComponents.length}');
-    return Container(
-        margin: EdgeInsets.only(
-            left: mSecondaryMarginLR,
-            top: 0,
-            right: mSecondaryMarginLR,
-            bottom: 0),
-        child: Column(children: <Widget>[
-          _tabSection(context),
-        ]));
+    return _tabSection(context);
   }
 
   Widget _tabSection(BuildContext context) {
@@ -62,16 +44,23 @@ class _XTabSectionscreenListState extends State<XTabSectionscreenList> {
       key: _listKeyTabSectionsList,
       length: xtabTitles.length,
       child: Container(
+        // margin: EdgeInsets.only(bottom: mPrimaryMarginTB),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(top: mTertiaryMarginTB),
+              margin: EdgeInsets.only(top: mSecondaryMarginTB),
+              constraints: const BoxConstraints(
+                maxHeight: 40,
+                minHeight: 40,
+              ),
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.secondary,
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(rSecondaryRadius),
-                    bottomLeft: Radius.circular(rSecondaryRadius)),
+                    topLeft: Radius.circular(rPrimaryRadius),
+                    bottomLeft: Radius.circular(rPrimaryRadius),
+                    topRight: Radius.circular(rPrimaryRadius),
+                    bottomRight: Radius.circular(rPrimaryRadius)),
               ),
               child: TabBar(
                 // labelColor: cPlaceHolder,
@@ -83,48 +72,56 @@ class _XTabSectionscreenListState extends State<XTabSectionscreenList> {
                 isScrollable: true,
               ),
             ),
-            Container(
-              //Add this to give height
-              height: MediaQuery.of(context).size.height,
-              child: TabBarView(
-                  children: xcardComponents
-                      .map((e) => Container(
-                            margin: EdgeInsets.only(
-                                left: mPrimaryMarginLR,
-                                top: mTertiaryMarginTB + 1,
-                                right: mPrimaryMarginLR,
-                                bottom: 0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                XTabsectionSubtitle(
-                                    tabsecondaryText: e.tabsecondaryText1,
-                                    tabtertiaryText:
-                                        '${e.tabtertiaryText1} ...'),
-                                XTabsectionSubtitle(
-                                    tabsecondaryText: e.tabsecondaryText2,
-                                    tabtertiaryText:
-                                        '${e.tabtertiaryText2} ...'),
-                                XTabsectionSubtitle(
-                                    tabsecondaryText: e.tabsecondaryText3,
-                                    tabtertiaryText:
-                                        '${e.tabtertiaryText3} ...'),
-                                XTabsectionSubtitle(
-                                    tabsecondaryText: e.tabsecondaryText4,
-                                    tabtertiaryText:
-                                        '${e.tabtertiaryText4} ...'),
-                                XTabsectionSubtitle(
-                                    tabsecondaryText: e.tabsecondaryText4,
-                                    tabtertiaryText:
-                                        '${e.tabtertiaryText5} ...'),
-                                XTabsectionSubtitle(
-                                    tabsecondaryText: e.tabsecondaryText4,
-                                    tabtertiaryText:
-                                        '${e.tabtertiaryText6} ...'),
-                              ],
-                            ),
-                          ))
-                      .toList()),
+            // ),
+            Flexible(
+              // flex: 3,
+              fit: FlexFit.loose,
+              child: Container(
+                margin: EdgeInsets.only(
+                    left: mPrimaryMarginLR, right: mPrimaryMarginLR),
+                width: MediaQuery.of(context).size.width,
+                // height: MediaQuery.of(context).size.height,
+                child: TabBarView(
+                    children: xcardComponents
+                        .map((e) => SingleChildScrollView(
+                              // physics: NeverScrollableScrollPhysics(), ////when uncommented; the SingleChildScrollView does not scroll
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    top: mTertiaryMarginTB + 1, bottom: 0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    XTabsectionSubtitle(
+                                        tabsecondaryText: e.tabsecondaryText1,
+                                        tabtertiaryText:
+                                            '${e.tabtertiaryText1} ...'),
+                                    XTabsectionSubtitle(
+                                        tabsecondaryText: e.tabsecondaryText2,
+                                        tabtertiaryText:
+                                            '${e.tabtertiaryText2} ...'),
+                                    XTabsectionSubtitle(
+                                        tabsecondaryText: e.tabsecondaryText3,
+                                        tabtertiaryText:
+                                            '${e.tabtertiaryText3} ...'),
+                                    XTabsectionSubtitle(
+                                        tabsecondaryText: e.tabsecondaryText4,
+                                        tabtertiaryText:
+                                            '${e.tabtertiaryText4} ...'),
+                                    XTabsectionSubtitle(
+                                        tabsecondaryText: e.tabsecondaryText5,
+                                        tabtertiaryText:
+                                            '${e.tabtertiaryText5} ...'),
+                                    XTabsectionSubtitle(
+                                        tabsecondaryText: e.tabsecondaryText6,
+                                        tabtertiaryText:
+                                            '${e.tabtertiaryText6} ...'),
+                                  ],
+                                ),
+                              ),
+                            ))
+                        .toList()),
+              ),
             ),
           ],
         ),

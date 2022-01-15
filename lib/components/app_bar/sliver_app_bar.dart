@@ -1,4 +1,4 @@
-import 'package:app_vorlage_prototyp/config/modules/border_variables_module.dart';
+import 'package:app_vorlage_prototyp/config/modules/border_padding_margin_radius_etc_variables_module.dart';
 import 'package:flutter/material.dart';
 
 class XSliverAppBar extends StatelessWidget {
@@ -9,6 +9,7 @@ class XSliverAppBar extends StatelessWidget {
     required bool floating,
     required this.appBarTitle,
     required this.onPressed,
+    this.leading,
     // double? expandedHeight,
     // double? collapsedHeight,
   })  : pinned = pinned,
@@ -26,6 +27,7 @@ class XSliverAppBar extends StatelessWidget {
   final VoidCallback onPressed;
   // final double _expandedHeight;
   // final double _collapsedHeight;
+  final Widget? leading;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +52,7 @@ class XSliverAppBar extends StatelessWidget {
       elevation: ePrimary,
       title: appBarTitle,
       centerTitle: true,
+      leading: leading,
     );
   }
 }

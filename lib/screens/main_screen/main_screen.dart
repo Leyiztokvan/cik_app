@@ -1,10 +1,16 @@
+import 'package:app_vorlage_prototyp/components/bottom_navigation_bar.dart';
+import 'package:app_vorlage_prototyp/config/modules/border_padding_margin_radius_etc_variables_module.dart';
+import 'package:app_vorlage_prototyp/config/modules/icons.dart';
 import 'package:app_vorlage_prototyp/config/palettes/color_palette.dart';
+import 'package:app_vorlage_prototyp/screens/discover/discover_screen.dart';
 import 'package:app_vorlage_prototyp/screens/home/home_screen.dart';
+import 'package:app_vorlage_prototyp/screens/profile/profile_screen.dart';
+import 'package:app_vorlage_prototyp/screens/settings/settings_screen.dart';
 import 'package:flutter/material.dart';
 // ignore_for_file: prefer_const_constructors
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({ Key? key }) : super(key: key);
+  const MainScreen({Key? key}) : super(key: key);
 
   @override
   _MainScreenState createState() => _MainScreenState();
@@ -12,63 +18,77 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int currentIndex = 1;
-  final screens = [
-    // DiscoverScreen(),
-    HomepageScreen(),
-    // //LibraryScreen(),
-    // ProfileScreen(),
-    // SettingsScreen(),
+  final List<Widget> screens = [
+    const DiscoverScreen(),
+    const HomepageScreen(),
+    const ProfileScreen(),
+    const SettingsScreen(),
   ];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        bottomNavigationBar: Container(
-          height: 54,
-          alignment: Alignment.bottomCenter,
-          child: BottomNavigationBar(
-            currentIndex: currentIndex,
-            onTap: (index) => setState(() => currentIndex = index),
-            backgroundColor: cPrimaryColor,
-            //selectedItemColor: Colors.black,
-            //unselectedItemColor: Colors.white,
-            unselectedIconTheme: IconThemeData(
-              color: Colors.white70,
-              opacity: 80,
-              size: 20,
-            ),
-
-            selectedIconTheme: IconThemeData(
-              color: Colors.black,
-              opacity: 100,
-              size: 24,
-            ),
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            type: BottomNavigationBarType.fixed,
-            // ignore: prefer_const_literals_to_create_immutables
-            items: [
-              // BottomNavigationBarItem(
-              //   icon: Icon( Icons.photo_library)),
-              // BottomNavigationBarItem(
-              //   icon: Icon(Icons.search),
-              // ),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.search), label: "Search"),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: "Home",
+    return SafeArea(
+      child: Scaffold(
+          resizeToAvoidBottomInset: false,
+          bottomNavigationBar: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(rSecondaryRadius),
+                topRight: Radius.circular(rSecondaryRadius),
               ),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.person), label: "Profile"),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
-                label: "Setting",
+            ),
+            height: bottomNaviagtionBarHeight,
+            alignment: Alignment.bottomCenter,
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(rSecondaryRadius),
+                topRight: Radius.circular(rSecondaryRadius),
               ),
-            ],
+              child: BottomNavigationBar(
+                // fixedColor: Theme.of(context).colorScheme.primary,
+                elevation: ePrimary,
+                currentIndex: currentIndex,
+                onTap: (index) => setState(() => currentIndex = index),
+                // backgroundColor: Theme.of(context).colorScheme.primary,
+                unselectedIconTheme: const IconThemeData(
+                  color: cWhite,
+                  opacity: 80,
+                  size: 20,
+                ),
+                selectedIconTheme: const IconThemeData(
+                  color: cBlack,
+                  opacity: 100,
+                  size: 24,
+                ),
+                showSelectedLabels: false,
+                showUnselectedLabels: false,
+                type: BottomNavigationBarType.shifting,
+                items: [
+                  BottomNavigationBarItem(
+                    icon: Icon(iconSearch),
+                    label: "Search",
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(iconHomeFilled),
+                    label: "Home",
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(iconPersonFilled),
+                    label: "Profile",
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(iconSettings),
+                    label: "Setting",
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                  ),
+                ],
+              ),
+            ),
           ),
-        ),
-        body: 
-        IndexedStack(index: currentIndex, children: screens)
-        );
+          body: IndexedStack(index: currentIndex, children: screens)),
+    );
   }
 }

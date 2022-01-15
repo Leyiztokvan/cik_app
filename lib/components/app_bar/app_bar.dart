@@ -1,4 +1,4 @@
-import 'package:app_vorlage_prototyp/config/modules/border_variables_module.dart';
+import 'package:app_vorlage_prototyp/config/modules/border_padding_margin_radius_etc_variables_module.dart';
 import 'package:flutter/material.dart';
 
 class XAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -8,13 +8,14 @@ class XAppBar extends StatelessWidget implements PreferredSizeWidget {
       required bool pinned,
       required bool snap,
       required bool floating,
-      required VoidCallback onPressed,
-      required bool centerTitle})
+      // required VoidCallback onPressed,
+      required bool centerTitle,
+      this.leading})
       : pinned = pinned,
         snap = snap,
         floating = floating,
         centerTitle = centerTitle,
-        preferredSize = Size.fromHeight(60.0),
+        preferredSize = const Size.fromHeight(60.0),
         super(key: key);
 
   final bool centerTitle;
@@ -22,6 +23,7 @@ class XAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool pinned;
   final bool snap;
   final Widget appBarTitle;
+  final Widget? leading;
 
   @override
   final Size preferredSize;
@@ -29,6 +31,9 @@ class XAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
+      leading: leading,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       title: appBarTitle,
       centerTitle: centerTitle,
       elevation: ePrimary,

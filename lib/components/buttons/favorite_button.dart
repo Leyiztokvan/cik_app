@@ -2,7 +2,7 @@ import 'package:app_vorlage_prototyp/config/palettes/color_palette.dart';
 import 'package:flutter/material.dart';
 
 class XFavoriteButton extends StatefulWidget {
-  XFavoriteButton({
+  const XFavoriteButton({
     double? iconSize,
     Color? iconColor,
     Color? iconDisabledColor,
@@ -10,8 +10,8 @@ class XFavoriteButton extends StatefulWidget {
     required Function valueChanged,
     Key? key,
   })  : _iconSize = iconSize ?? 22.0,
-        _iconColor = iconColor ?? Colors.red,
-        _iconDisabledColor = iconDisabledColor ?? Colors.white,
+        _iconColor = iconColor ?? cRed,
+        _iconDisabledColor = iconDisabledColor ?? cWhite,
         _isFavorite = isFavorite ?? false,
         _valueChanged = valueChanged,
         super(key: key);
@@ -37,7 +37,7 @@ class _XFavoriteButtonState extends State<XFavoriteButton>
   double _maxIconSize = 30;
   double _minIconSize = 0.0;
 
-  final int _animationTime = 400;
+  final int _animationTime = 250;
 
   bool _isFavorite = false;
   bool _isAnimationCompleted = false;
@@ -52,7 +52,7 @@ class _XFavoriteButtonState extends State<XFavoriteButton>
         : (widget._iconSize > 100.0)
             ? 100.0
             : widget._iconSize;
-    final double _sizeDifference = _maxIconSize * 0.30;
+    final double _sizeDifference = _maxIconSize * 0.10;
     _minIconSize = _maxIconSize - _sizeDifference;
 
     _controller = AnimationController(
@@ -137,7 +137,7 @@ class _XFavoriteButtonState extends State<XFavoriteButton>
               Icon(
                 (Icons.favorite_border),
                 size: _sizeAnimation.value,
-                color: black,
+                color: cBlack,
               ),
             ],
           ),

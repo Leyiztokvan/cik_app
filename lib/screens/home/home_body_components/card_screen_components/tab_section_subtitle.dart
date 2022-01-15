@@ -25,7 +25,7 @@ class XTabsectionSubtitle extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyText1,
                 )),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Flexible(
@@ -44,7 +44,7 @@ class XTabsectionSubtitle extends StatelessWidget {
                     child: RichText(
                         text: TextSpan(
                             style: Theme.of(context).textTheme.bodyText2,
-                            children: [
+                            children: const [
                           TextSpan(
                               text:
                                   'ttttttt ttttttttttt tttttttt ttttttttttttt ttttttt  tttttttttt tttttt ttttttttttttttttt tttttttttttttttttttttttt tttttttttttt ttttttttt'),
@@ -54,7 +54,7 @@ class XTabsectionSubtitle extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
         ]);

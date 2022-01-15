@@ -2,7 +2,7 @@ import 'package:app_vorlage_prototyp/config/palettes/color_palette.dart';
 import 'package:flutter/material.dart';
 
 class XFavoriteButtonCardScreen extends StatefulWidget {
-  XFavoriteButtonCardScreen({
+  const XFavoriteButtonCardScreen({
     double? iconSize,
     Color? iconColor,
     Color? iconDisabledColor,
@@ -23,7 +23,8 @@ class XFavoriteButtonCardScreen extends StatefulWidget {
   final Color? _iconDisabledColor;
 
   @override
-  _XFavoriteButtonCardScreenState createState() => _XFavoriteButtonCardScreenState();
+  _XFavoriteButtonCardScreenState createState() =>
+      _XFavoriteButtonCardScreenState();
 }
 
 class _XFavoriteButtonCardScreenState extends State<XFavoriteButtonCardScreen>
@@ -37,7 +38,7 @@ class _XFavoriteButtonCardScreenState extends State<XFavoriteButtonCardScreen>
   double _maxIconSize = 0.0;
   double _minIconSize = 0.0;
 
-  final int _animationTime = 400;
+  final int _animationTime = 250;
 
   bool _isFavorite = false;
   bool _isAnimationCompleted = false;
@@ -52,7 +53,7 @@ class _XFavoriteButtonCardScreenState extends State<XFavoriteButtonCardScreen>
         : (widget._iconSize > 100.0)
             ? 100.0
             : widget._iconSize;
-    final double _sizeDifference = _maxIconSize * 0.30;
+    final double _sizeDifference = _maxIconSize * 0.10;
     _minIconSize = _maxIconSize - _sizeDifference;
 
     _controller = AnimationController(
@@ -137,7 +138,7 @@ class _XFavoriteButtonCardScreenState extends State<XFavoriteButtonCardScreen>
               Icon(
                 (Icons.favorite_border),
                 size: _sizeAnimation.value,
-                color: black,
+                color: cBlack,
               ),
             ],
           ),

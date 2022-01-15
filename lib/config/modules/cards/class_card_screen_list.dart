@@ -17,14 +17,10 @@ class _XCardScreensListState extends State<XCardScreensList> {
   final GlobalKey _listKeyCardScreensList = GlobalKey();
   List<Widget> xcardScreenComponents = [];
 
-  // TODO: IF THE WIDGET WORK. CLEAN IT AND DELETE xTabTitles and it functions
-  // List<Widget> xtabTitles = [];
-
   @override
   void initState() {
     super.initState();
     _addCardComponents();
-    // _addtabComponents();
   }
 
   void _addCardComponents() {
@@ -33,23 +29,11 @@ class _XCardScreensListState extends State<XCardScreensList> {
     });
   }
 
-  // void _addtabComponents() {
-  //   xcardComponents.forEach((XCardComponents cardComponents) {
-  //     xtabTitles.add(_buildTabScreens(cardComponents));
-  //   });
-  // }
-
   Widget _buildScreens(XCardComponents cComponents) {
     return XCardTemplate(
       cComponents: cComponents,
     );
   }
-
-  // Widget _buildTabScreens(XCardComponents cComponents) {
-  //   return XTabTitle(
-  //     cComponents: cComponents,
-  //   );
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +42,7 @@ class _XCardScreensListState extends State<XCardScreensList> {
       width: MediaQuery.of(context).size.width * 1,
       child: ListView.separated(
           separatorBuilder: (BuildContext context, int index) {
-            return SizedBox(
+            return const SizedBox(
               width: 10,
             );
           },
