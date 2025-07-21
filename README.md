@@ -1,69 +1,94 @@
 # Çik
 
-**A flexiable design template for mobile e-commerce apps created with Flutter.**
-A project created for the final high school year project.
+**A flexible and modern mobile e-commerce app's design template built with Flutter**
+
+*— Built as a final high school project (Maturaarbeit) —*
 
 ![Alt text](design/cik.png)
 
 
 ## Table of Contents
 
-- [Project Overview](#projectoverview)
-- [Naming and Logo](#naming-and-logo)
+- [Overview](#overview)
+- [Naming & Logo](#naming--logo)
 - [Motivation](#motivation)
 - [Roadmap](#roadmap)
 - [Design](#design)
 
-## Project Overview
+## Overview
 
-As part of this project, an interactive mobile app template for an "e-commerce" app for smartphones was created in "Flutter", a UI development kit from Google, which uses the "Dart" programming language for the development of cross-platform apps.
-The app template is intended to contain the basic building blocks and functions of an e-commerce app, such as the homepage and product information page. This template will later serve as a template for the creation of various e-commerce applications.
+**Çik**, an interactive template for a mobile e-commerce app, was built using `Flutter` and `Dart`. The template is designed to include essential components and features of a typical e-commerce app —  such as the homepage, product listing, and product details screens. 
+This template serves as a foundation for building various e-commerce applications.
 
-**Note**: The application is not available for download anymore. There are no plans for publishing the app for the time being.
+***Note**: The template is no longer available for download, and there are currently no plans to publish it.*
 
-## Naming and Logo
-###### Çik
-Kurdish word for **Thing**, it could be anything. Chosen as a name to symbolise and show that any idea can be created and realised into ***Thing***, in this case in an application.
+## Naming & Logo
 
-###### Logo
-- The **puzzle pieces** represent the modularity, reusability and seamless integration of a flexible design and its components. 
-- The **encircling line and circles** represent the process of creating this ***Çik***, this ***thing*** and maintenance of it during its existence.
-- The **open area in the surrounding line** represents the possibility of easy modification and expansion.
+**Çik** is a name derived from the Kurdish word **Çîk**, meaning **something** or **thing** — *a general object or unspecified item, it could be anything*.
+
+The name is chosen to symbolise and show how any idea can be shaped into a tangible ***thing*** — in this case, an application.
+
+
+**About the Logo:**
+<table>
+    <td style="vertical-align: top; width: 60%;">
+        <strong>Puzzle pieces</strong> represent modularity, reusability, and seamless integration of a flexible design and its components.
+        <br>
+        <br>
+        <strong>Encircling line and circles</strong> symbolize the development journey and lifecycle of a project.
+        <br>
+        <br>
+        <strong>Open gap in surrounding line</strong> represents the possibility of easy modification and expansion.
+    </td>
+    <td style="text-align: right; width: 30%;">
+      <img src="design/logo.png" alt="Çik Logo" width="250"/>
+    </td>
+</table>
 
 
 ## Motivation
 
-- Learn programming
-- Learn about software development
-- Learn about design 
-- Developing a product by myself for my own ambition
-- Making the transformation of an idea into a product/application easy and seamless
-- Documenting the process to enable other interested beginners to realise their own ideas
+This project was driven by curiosity and a desire for self-directed learning. My goals included:
+- Learn and gain hands-on experience in programming
+- Understand and learn the principles of software development
+- Explore design principles and concepts
+- Make the transformation of an idea into a product (app) easy and seamless
+- Document and share the process to enable, inspire, and guide other beginners to realise their own ideas
+- Develop a product by myself, driven by personal ambition
 
 
 ## Roadmap
 Here is a brief overview of the milestones:
-- Research which tools to use
-- Learning Dart and Flutter by starting with the creation of a flash light app (see app here [Cöcu](https://github.com/Leyiztokvan/coecu_app))
-- Test and publish the created flash light app in the Play Store
-- Learn design concepts 
-- Plan and create the UI and UX
-- Develop **Çik**
-- Publish **Çik** in the Play Store
+- Research and choose appropriate tools
+- Learn `Dart` and `Flutter` by building a simple flashlight app -> [**Cöcu**](https://github.com/Leyiztokvan/coecu_app)
+- Test and publish the flashlight app on the Play Store
+- Study UI/UX design principles 
+- Design the interface and user flow for **Çik**
+- Develop and prototype the app template
+- Publish a first version of **Çik** on the Play Store
 
-For more details about the development process of this project and a deeper insight into the theory can be seen at [paper](high_school/paper.pdf).
-An insight into the high school final presentation of the work can be found at [presentation](high_school/presentation.pdf)
-**Note**: The paper and presentation are in **German**. 
+<br>
+
+**More Details**:
+
+- Further details about the development process and theoretical background are available in the [project paper](high_school/paper.pdf).
+- The high school presentation can be here [project presentation](high_school/presentation.pdf).
+
+    *! Please note the paper and presentation are in **German***.
 
 
 ## Design 
-### Wireframe
-![Alt text](design/wireframe.png)
-*Few pages from the wirframe*
+### Wireframes
+*Few pages from the wireframes:*
 
-### Mockup
-![Alt text](design/mockup_1.png)
-![Alt text](design/mockup_2.png)
-![Alt text](design/mockup_3.png)
+<img src="design/wireframe.png"  width="350" />
+
+### Mockups
+*Mockups illustrating the visual direction and user interface:*
 
 
+<img src="design/mockup_1.png"  width="350"/>
+
+<img src="design/mockup_2.png"  width="350"/>
+
+<img src="design/mockup_3.png"  width="230"/>
